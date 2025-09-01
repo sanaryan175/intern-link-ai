@@ -61,18 +61,18 @@ export function Hero({ onGetStarted }: HeroProps) {
               </Button>
               <Button 
                 size="lg"
-                variant="outline"
+                variant="secondary"
                 onClick={() => onGetStarted('companies')}
-                className="flex items-center space-x-2 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
+                className="flex items-center space-x-2"
               >
                 <Building2 className="w-5 h-5" />
                 <span>For Companies</span>
               </Button>
               <Button 
                 size="lg"
-                variant="outline"
+                variant="secondary"
                 onClick={() => onGetStarted('government')}
-                className="flex items-center space-x-2 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
+                className="flex items-center space-x-2"
               >
                 <Shield className="w-5 h-5" />
                 <span>For Government</span>
