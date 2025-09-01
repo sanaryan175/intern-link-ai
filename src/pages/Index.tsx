@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { ModuleOverview } from "@/components/ModuleOverview";
+import { Footer } from "@/components/Footer";
 import { StudentsDashboard } from "@/components/modules/StudentsDashboard";
 import { CompaniesDashboard } from "@/components/modules/CompaniesDashboard";
 import { GovernmentDashboard } from "@/components/modules/GovernmentDashboard";
@@ -53,6 +54,7 @@ const Index = () => {
       <Header activeModule={activeModule} onModuleChange={handleModuleChange} />
       <Hero onGetStarted={handleGetStarted} />
       <ModuleOverview onSelectModule={handleGetStarted} />
+      <Footer />
     </div>
   );
 };

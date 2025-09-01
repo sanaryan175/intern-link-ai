@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, User, Building2, Shield } from "lucide-react";
+import { Menu, X, User, Building2, Shield, Home } from "lucide-react";
 
 interface HeaderProps {
   activeModule?: 'students' | 'companies' | 'government' | null;
-  onModuleChange?: (module: 'students' | 'companies' | 'government') => void;
+  onModuleChange?: (module: 'students' | 'companies' | 'government' | null) => void;
 }
 
 export function Header({ activeModule, onModuleChange }: HeaderProps) {
@@ -35,6 +35,15 @@ export function Header({ activeModule, onModuleChange }: HeaderProps) {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-2">
+            <Button
+              variant={activeModule === null ? "default" : "ghost"}
+              size="sm"
+              onClick={() => onModuleChange?.(null)}
+              className="flex items-center space-x-2"
+            >
+              <Home className="w-4 h-4" />
+              <span>Home</span>
+            </Button>
             {modules.map((module) => {
               const Icon = module.icon;
               const isActive = activeModule === module.id;
@@ -68,6 +77,18 @@ export function Header({ activeModule, onModuleChange }: HeaderProps) {
         {isMobileMenuOpen && (
           <div className="md:hidden py-4 border-t border-border">
             <nav className="flex flex-col space-y-2">
+              <Button
+                variant={activeModule === null ? "default" : "ghost"}
+                size="sm"
+                onClick={() => {
+                  onModuleChange?.(null);
+                  setIsMobileMenuOpen(false);
+                }}
+                className="flex items-center justify-start space-x-2 w-full"
+              >
+                <Home className="w-4 h-4" />
+                <span>Home</span>
+              </Button>
               {modules.map((module) => {
                 const Icon = module.icon;
                 const isActive = activeModule === module.id;
